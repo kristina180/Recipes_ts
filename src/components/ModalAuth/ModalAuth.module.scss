@@ -1,0 +1,87 @@
+.modalsection {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 20;
+}
+
+.modalActive {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: fit-content;
+  max-width: 50%;
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 10px;
+
+  p {
+    width: 90%;
+    text-align: center;
+    align-self: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 90%;
+      font-size: 20px;
+      padding: 5px;
+
+      border: 1px solid rgb(88, 88, 88);
+      border-radius: 10px;
+
+      &:first-child {
+        background-color: #ffeb51;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.nowr {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1200px) {
+  .modalActive {
+    max-width: 40%;
+    padding: 1rem;
+
+    p {
+      font-size: 2vw;
+    }
+
+    div button {
+      font-size: 1.8vw;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modalActive {
+    max-width: 280px;
+
+    div button {
+      padding: 3px;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

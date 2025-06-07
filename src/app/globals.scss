@@ -35,8 +35,19 @@ a {
   text-decoration: none;
 }
 
+.content {
+  width: 1152px;
+  justify-self: center;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (max-width: 1152px) {
+  .content {
+    width: 100%;
   }
 }

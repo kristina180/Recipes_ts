@@ -1,0 +1,271 @@
+.section {
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  z-index: 8;
+}
+
+.content {
+  width: 1152px;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: none;
+
+  img {
+    border-radius: 5px;
+  }
+
+  form {
+    height: 50%;
+    width: 55%;
+    box-sizing: content-box;
+    position: relative;
+    z-index: 9;
+
+    input {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgb(88, 88, 88);
+      border-radius: 10px;
+      padding: 0 5px;
+    }
+
+    .iconDelete {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+    }
+  }
+}
+
+.divAdd {
+  height: 50%;
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 6px;
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 10px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 10px;
+    p {
+      width: 70%;
+    }
+  }
+}
+
+.searchResult {
+  margin-top: 5px;
+  background: white;
+  z-index: 10;
+  overflow: auto;
+  width: 100%;
+  height: fit-content;
+  max-height: 360px;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 100px;
+    margin: 3px 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #7f7f7f;
+    border-radius: 100px;
+  }
+}
+
+.noRec {
+  height: 40px;
+  margin-top: 5px;
+  background: white;
+  z-index: 10;
+  width: 100%;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.boxitem {
+  width: 100%;
+  border: 1px solid rgb(88, 88, 88);
+  z-index: 10;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  padding: 5px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(88, 88, 88);
+    margin-right: 3px;
+  }
+
+  p {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    height: 50px;
+    padding-right: 5px;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+
+  .noRec {
+    border-radius: 6px;
+  }
+
+  .content {
+    img {
+      width: 60px;
+      height: 40px;
+    }
+
+    form {
+      height: 20px;
+
+      input {
+        border-radius: 6px;
+      }
+
+      .iconDelete {
+        width: 16px;
+        height: 16px;
+        bottom: 2px;
+      }
+    }
+  }
+  .divAdd {
+    div {
+      border-radius: 50%;
+      height: 25px;
+      width: 25px;
+      align-items: center;
+
+      p {
+        display: none;
+      }
+    }
+  }
+
+  .boxitem {
+    padding: 2px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    p {
+      font-size: 2vw;
+    }
+  }
+
+  .noRec {
+    height: fit-content;
+    padding: 5px;
+    font-size: 2vw;
+  }
+
+  .searchResult {
+    max-height: 280px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    height: 40px;
+    padding-right: 5px;
+  }
+
+  .content {
+    img {
+      width: 40px;
+      height: 30px;
+    }
+
+    form {
+      height: 55%;
+      input {
+        font-size: 10px;
+        height: 16px;
+      }
+      .iconDelete {
+        width: 14px;
+        height: 14px;
+        bottom: 4px;
+        right: 3px;
+      }
+    }
+  }
+
+  .icon {
+    height: 16px;
+    width: 16px;
+  }
+
+  .iconplus {
+    height: 14px;
+  }
+
+  .divAdd {
+    div {
+      height: 18px;
+      width: 18px;
+      padding: 0 2px;
+    }
+  }
+
+  .boxitem {
+    p: {
+      font-size: 3vw;
+    }
+  }
+
+  .noRec {
+    font-size: 3vw;
+  }
+}

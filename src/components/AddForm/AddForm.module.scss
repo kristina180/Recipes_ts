@@ -1,0 +1,331 @@
+.section {
+  display: block;
+  width: 80%;
+  justify-self: center;
+
+  > div {
+    margin: 20px 10px;
+    font-size: 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 10px;
+  font-size: 16px;
+
+  > * {
+    width: 100%;
+  }
+
+  input,
+  select {
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid rgb(88, 88, 88);
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  input {
+    padding: 0 5px;
+  }
+
+  label {
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+
+  button {
+    background-color: #ffeb51;
+    border-radius: 5px;
+    border: 1px solid rgb(88, 88, 88);
+    height: 30px;
+    font-size: 16px;
+  }
+
+  > button {
+    margin-top: 10px;
+  }
+}
+
+.divList {
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    width: 86%;
+  }
+  button {
+    width: 12%;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  > div {
+    border-radius: 5px;
+    border: 1px solid rgb(88, 88, 88);
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    max-width: fit-content;
+    padding: 2.5px 5px;
+
+    button {
+      border: none;
+      height: auto;
+      background-color: transparent;
+    }
+  }
+}
+
+.listItemP {
+  align-content: center;
+  overflow: hidden;
+}
+
+.iconX {
+  margin-top: 1.5px;
+  margin-left: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .divList {
+    input {
+      width: 84%;
+    }
+
+    button {
+      width: 14%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    > div {
+      font-size: 15px;
+      margin: 10px 5px;
+    }
+    > button {
+      margin-top: 15px;
+    }
+  }
+
+  .divList {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .list {
+    > div {
+      margin-bottom: 0;
+      button {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .form {
+    input,
+    select,
+    button,
+    label {
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    label,
+    button {
+      margin-bottom: 5px;
+    }
+
+    label {
+      margin-bottom: 5px;
+      margin-top: 8px;
+    }
+  }
+  .iconX {
+    height: 16px;
+    width: 16px;
+  }
+  .listItemP {
+    font-size: 14px;
+    height: 20px;
+  }
+}
+
+/* .section {
+  display: block;
+  width: 80%;
+  justify-self: center;
+}
+
+.title {
+  margin: 20px 10px;
+  font-size: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid rgb(88, 88, 88);
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.form > * {
+  width: 100%;
+}
+
+.form input,
+.form select {
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid rgb(88, 88, 88);
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form input {
+  padding: 0 5px;
+}
+
+.form label {
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.divList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divList input {
+  width: 86%;
+}
+
+.divList button {
+  width: 12%;
+}
+
+.form button {
+  background-color: #ffeb51;
+  border-radius: 5px;
+  border: 1px solid rgb(88, 88, 88);
+  height: 30px;
+  font-size: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.listItem {
+  border-radius: 5px;
+  border: 1px solid rgb(88, 88, 88);
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  max-width: fit-content;
+  padding: 2.5px 5px;
+}
+
+.listItem div {
+  align-content: center;
+  overflow: hidden;
+}
+
+.listItem button {
+  border: none;
+  height: auto;
+  background-color: transparent;
+}
+
+.iconX {
+  margin-top: 1.5px;
+  margin-left: 5px;
+}
+
+.submitForm {
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .divList input {
+    width: 84%;
+  }
+  .divList button {
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 15px;
+    margin: 10px 5px;
+  }
+  .divList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .divList input {
+    width: 100%;
+  }
+
+  .divList button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .submitForm {
+    margin-top: 15px;
+  }
+  .form,
+  .form input,
+  .form select,
+  .form button {
+    font-size: 14px;
+  }
+
+  .form input,
+  .form select {
+    margin-bottom: 5px;
+  }
+
+  .form label {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+ */

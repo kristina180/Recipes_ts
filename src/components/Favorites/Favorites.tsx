@@ -29,7 +29,7 @@ export const Favorites = observer(() => {
             <div
               className={styles.recipe}
               key={elem.id}
-              onClick={() => push(`/${elem.id}`)}
+              onClick={() => push(`/recipes/${elem.id}`)}
             >
               <div className={styles.divimg}>
                 <img

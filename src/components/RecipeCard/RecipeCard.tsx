@@ -2,7 +2,7 @@
 
 import { useStores } from "@/root-store-context";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react-lite";
 
 import ModuleAuth from "../ModalAuth/ModalAuth";
@@ -19,18 +19,25 @@ export const RecipesCard = observer(() => {
     authStore: { user },
   } = useStores();
 
-  const pass = usePathname().replace("/", "");
+  const pass = usePathname().replace("/recipes/", "");
 
   const selectedRecipe = recipes.find((elem) => elem.id == pass);
 
-  function handleClick(recipe: IGetRecipe) {
+  const [buttonValue, setButtonValue] = useState<string>("Add to favorites");
+
+  const handleClick = (recipe: IGetRecipe) => {
     if (user && user.id) {
-      addToFavorites(recipe);
+      if (favorites.find((elem) => elem.id == recipe.id)) {
+        setButtonValue("Add to favorites");
+        deleteFromFavorites(recipe);
+      } else {
+        setButtonValue("Added to favorites");
+        addToFavorites(recipe);
+      }
     } else {
       setModalActive(true);
     }
-  }
-
+  };
   const handleModalClose = () => {
     setModalActive(false);
   };
@@ -38,6 +45,12 @@ export const RecipesCard = observer(() => {
   useEffect(() => {
     getRecipes();
   }, []);
+
+  useEffect(() => {
+    favorites.find((elem) => elem.id == selectedRecipe?.id)
+      ? setButtonValue("Added to favorites")
+      : setButtonValue("Add to favorites");
+  }, [recipes]);
 
   return (
     selectedRecipe && (
@@ -50,20 +63,10 @@ export const RecipesCard = observer(() => {
             <p>Cooking time: {selectedRecipe.cookTimeMinutes} minutes</p>
             <p>Level: {selectedRecipe.difficulty}</p>
             <p>Calories: {selectedRecipe.caloriesPerServing} calories</p>
-            {favorites.find((elem) => elem.id == selectedRecipe.id) ? (
-              <button
-                type="button"
-                onClick={() => {
-                  deleteFromFavorites(selectedRecipe);
-                }}
-              >
-                Added to favorites
-              </button>
-            ) : (
-              <button type="button" onClick={() => handleClick(selectedRecipe)}>
-                Add to favorites
-              </button>
-            )}
+
+            <button type="button" onClick={() => handleClick(selectedRecipe)}>
+              {buttonValue}
+            </button>
           </div>
         </div>
 

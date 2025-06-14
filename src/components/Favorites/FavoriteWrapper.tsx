@@ -9,6 +9,8 @@ import dynamic from "next/dynamic";
 import ModuleAuth from "../ModalAuth/ModalAuth";
 
 import styles from "./Favorites.module.scss";
+import LoadingPage from "../LoadingPage/LoadingPage";
+import Favorites from "@/components/Favorites/Favorites";
 
 const FavComponet = dynamic(() => import("@/components/Favorites/Favorites"), {
   ssr: false,
@@ -20,7 +22,7 @@ const FavoriteWrapper = observer(() => {
   const { replace } = useRouter();
 
   const {
-    authStore: { checkAuth },
+    authStore: { checkAuth, user, isError },
   } = useStores();
 
   function handleModalClose(value?: string) {
@@ -36,21 +38,25 @@ const FavoriteWrapper = observer(() => {
 
   return (
     <>
-      {!isModalActive ? (
-        <FavComponet />
+      {!isError ? (
+        user && user.id ? (
+          <Favorites />
+        ) : (
+          <LoadingPage />
+        )
       ) : (
         <>
           <ModuleAuth
             text={
               <>
-                You can't view your favorites
+                You can't add <span className={styles.nowr}> a recipe</span>
                 <span className={styles.nowr}> without registration</span>
               </>
             }
             onCloseAction={handleModalClose}
           />
         </>
-      )}{" "}
+      )}
     </>
   );
 });

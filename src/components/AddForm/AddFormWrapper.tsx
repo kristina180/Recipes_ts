@@ -9,6 +9,7 @@ import ModuleAuth from "../ModalAuth/ModalAuth";
 import AddForm from "./AddForm";
 
 import styles from "./AddForm.module.scss";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 const AddFormWrapper = observer(() => {
   const [isModalActive, setModalActive] = useState<boolean>(true);
@@ -16,7 +17,7 @@ const AddFormWrapper = observer(() => {
   const { replace } = useRouter();
 
   const {
-    authStore: { user, checkAuth },
+    authStore: { user, checkAuth, isError },
   } = useStores();
 
   function handleModalClose(value?: string) {
@@ -33,8 +34,12 @@ const AddFormWrapper = observer(() => {
 
   return (
     <>
-      {user && user.id ? (
-        <AddForm />
+      {!isError ? (
+        user && user.id ? (
+          <AddForm />
+        ) : (
+          <LoadingPage />
+        )
       ) : (
         <>
           <ModuleAuth
@@ -47,7 +52,7 @@ const AddFormWrapper = observer(() => {
             onCloseAction={handleModalClose}
           />
         </>
-      )}{" "}
+      )}
     </>
   );
 });

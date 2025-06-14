@@ -40,6 +40,11 @@ a {
   justify-self: center;
 }
 
+.shadow {
+  height: 10px;
+  width: 100%;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

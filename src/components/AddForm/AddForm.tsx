@@ -122,6 +122,10 @@ const AddForm = observer(() => {
     }
   };
 
+  const checkKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === "Enter") e.preventDefault();
+  };
+
   useEffect(() => {
     getRecipes();
   }, []);
@@ -129,7 +133,11 @@ const AddForm = observer(() => {
   return (
     <div className={styles.section}>
       <div className={styles.title}>Adding a recipe</div>
-      <form className={styles.form} onSubmit={handleSubmit(handleSubmitForm)}>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit(handleSubmitForm)}
+        onKeyDown={(e) => checkKeyDown(e)}
+      >
         <label htmlFor="name">Name of the dish</label>
         <input
           id="name"

@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import { USER_URL } from "@/utils/constants";
+import { it } from "node:test";
 
 interface IUser {
   id: string;
@@ -22,6 +23,7 @@ export class AuthStore {
   user: IUser | undefined = undefined;
   users: IUser[] = [];
   isLoading: boolean = false;
+  isError: boolean = false;
 
   constructor() {
     makeAutoObservable(this);
@@ -32,7 +34,6 @@ export class AuthStore {
       const checkEmail = await fetch(`${USER_URL}users/`);
       const data_checkEmail = await checkEmail.json();
       this.users = data_checkEmail;
-      console.log(this.users);
     } catch (error: any) {
       console.log(error.message);
     }
@@ -76,6 +77,13 @@ export class AuthStore {
         document.cookie = `refresh_token=${data.refresh_token}; max-age=720`;
         this.checkAuth();
       }
+      if (data.statusCode && data.statusCode == 401) {
+        if (this.users.find((item) => item.email == values.email)) {
+          alert("Invalid password");
+        } else {
+          alert("This user is not registered");
+        }
+      }
     } catch (error) {
       console.log("error 401");
     }
@@ -90,7 +98,15 @@ export class AuthStore {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await login.json();
-        this.user = data;
+
+        if (data.statusCode && data.statusCode == 401) {
+          this.isError = true;
+        } else {
+          this.user = data;
+          this.isError = false;
+        }
+      } else {
+        this.isError = true;
       }
       this.isLoading = false;
     } catch (error: any) {

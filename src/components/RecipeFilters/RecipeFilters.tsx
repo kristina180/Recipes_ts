@@ -5,16 +5,19 @@ import { useStores } from "@/root-store-context";
 import { useForm } from "react-hook-form";
 import { observer } from "mobx-react-lite";
 
+import { memo } from "react";
 import { IFilters } from "@/utils/types";
 import styles from "./RecipesFilters.module.scss";
 
+const initialState: IFilters = {
+  cooktime: "",
+  cuisine: "not_selected",
+  difficulty: "not_selected",
+  calories: "not_selected",
+};
+
 const RecipeFilters = observer(() => {
-  const [values, setValue] = useState<IFilters>({
-    cooktime: "",
-    cuisine: "not_selected",
-    difficulty: "not_selected",
-    calories: "not_selected",
-  });
+  const [values, setValue] = useState<IFilters>(initialState);
 
   const {
     register,
@@ -37,18 +40,16 @@ const RecipeFilters = observer(() => {
 
   function handleClick() {
     setValue({ ...values, cooktime: "" });
-    reset({
-      cookTime: "",
-      cuisine: "not_selected",
-      difficulty: "not_selected",
-      calories: "not_selected",
-    });
+    reset(initialState);
     changeRecipes();
   }
 
   function handleSubmitForm() {
     getFilterRecipes(values);
   }
+  const checkKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === "Enter") e.preventDefault();
+  };
 
   return (
     <>
@@ -56,6 +57,7 @@ const RecipeFilters = observer(() => {
         <form
           className={styles.filters}
           onSubmit={handleSubmit(handleSubmitForm)}
+          onKeyDown={(e) => checkKeyDown(e)}
         >
           <div>
             <input

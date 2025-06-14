@@ -5,6 +5,7 @@ import { JSX, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useStores } from "@/root-store-context";
 import { observer } from "mobx-react-lite";
+import { memo } from "react";
 
 import ModuleAuth from "../ModalAuth/ModalAuth";
 
@@ -215,4 +216,4 @@ const Header = observer(() => {
     </div>
   );
 });
-export default Header;
+export default memo(Header);

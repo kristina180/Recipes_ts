@@ -20,7 +20,7 @@
   font-size: 20px;
 
   button {
-    width: 30%;
+    width: 35%;
     padding: 5px;
     position: absolute;
     bottom: 0;
@@ -36,59 +36,10 @@
     font-size: 2.5vw;
     margin-left: 12px;
     button {
+      width: 40%;
       padding: 3px;
       font-size: 2vw;
       border-radius: 6px;
     }
   }
 }
-
-/* .section {
-  width: 80%;
-  justify-self: center;
-  margin-top: 20px;
-  display: flex;
-}
-
-.section img {
-  width: 40%;
-  border: 1px solid rgb(88, 88, 88);
-  border-radius: 10px;
-}
-
-.info {
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  position: relative;
-  font-size: 20px;
-}
-
-.info button {
-  width: 30%;
-  padding: 5px;
-  position: absolute;
-  bottom: 0;
-  background-color: #e5e5e5;
-  border: 1px solid rgb(88, 88, 88);
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-@media screen and (max-width: 800px) {
-  .info {
-    font-size: 2.5vw;
-  }
-
-  .info {
-    margin-left: 12px;
-  }
-
-  .info button {
-    padding: 3px;
-    font-size: 2vw;
-    border-radius: 6px;
-  }
-}
- */

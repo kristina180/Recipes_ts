@@ -1,13 +1,19 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { IFormValuesAddForm, IGetRecipe } from "@/utils/types";
-import { RECIPE_URL } from "@/utils/constants";
+
 // import { makePersistable } from "mobx-persist-store";
+
+const RECIPE_URL = "http://localhost:3001/recipes";
 
 interface IFilters {
   cooktime: string;
   cuisine: string;
   difficulty: string;
-  calories: string;
+  caloriesPerServing: string;
+}
+
+function toUpperFirst(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 export class RecipeStore {
@@ -17,11 +23,6 @@ export class RecipeStore {
 
   constructor() {
     makeAutoObservable(this);
-    // makePersistable(this, {
-    //   name: "RecipeStore",
-    //   storage: typeof window !== "undefined" ? window.localStorage : undefined,
-    //   properties: ["recipes", "filterRecipes"],
-    // });
   }
 
   getRecipes = async () => {
@@ -48,22 +49,24 @@ export class RecipeStore {
       }
 
       this.isLoading = true;
+
+      const data_for_post = {
+        name: toUpperFirst(values.name),
+        ingredients: values.ingredients,
+        instructions: values.instructions,
+        prepTimeMinutes: Number(values.prepTimeMinutes),
+        cookTimeMinutes: Number(values.cookTimeMinutes),
+        difficulty: toUpperFirst(values.difficulty),
+        cuisine: toUpperFirst(values.cuisine),
+        caloriesPerServing: Number(values.caloriesPerServing),
+        image: values.image,
+      };
       const response = await fetch(RECIPE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
-        body: JSON.stringify({
-          name: values.name,
-          ingredients: values.ingredients,
-          instructions: values.instructions,
-          prepTimeMinutes: values.prepTimeMinutes,
-          cookTimeMinutes: values.prepTimeMinutes,
-          difficulty: values.difficulty,
-          cuisine: values.cuisine,
-          caloriesPerServing: values.calories,
-          image: values.image,
-        }),
+        body: JSON.stringify(data_for_post),
       });
 
       runInAction(() => {
@@ -88,9 +91,11 @@ export class RecipeStore {
           +filters.cooktime >= elem.cookTimeMinutes + elem.prepTimeMinutes
             ? true
             : false;
-        const arr_calories = filters.calories.split("_").map((elem) => +elem);
+        const arr_calories = filters.caloriesPerServing
+          .split("_")
+          .map((elem) => +elem);
         const calories =
-          filters.calories == "not_selected" ||
+          filters.caloriesPerServing == "not_selected" ||
           (elem.caloriesPerServing >= arr_calories[0] &&
             elem.caloriesPerServing <= arr_calories[1])
             ? true
@@ -109,7 +114,6 @@ export class RecipeStore {
 
         return difficulty && cuisine && calories && cookmin;
       });
-      console.log(rezult);
       this.filterRecipes = rezult;
     }
   };

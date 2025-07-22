@@ -24,10 +24,8 @@ export class FavoriteStore {
   };
 
   deleteFromFavorites = (elem: IGetRecipe) => {
-    // if (this.favorites.some((item) => item.id == elem.id)) {
     this.favorites = this.favorites.filter((item) => {
       return elem.id != item.id;
     });
   };
-  // };
 }

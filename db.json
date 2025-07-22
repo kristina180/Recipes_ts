@@ -1239,65 +1239,39 @@
       ]
     },
     {
-      "id": "720f",
-      "name": "Eggs",
-      "image": "https://dropi.ru/img/uploads/2017-12-11/8_original.jpeg",
-      "prepTimeMinutes": "30",
-      "cookTimeMinutes": "10",
-      "cuisine": "russian",
-      "difficulty": "easy",
-      "caloriesPerServing": "300",
+      "name": "New_dish",
       "ingredients": [
-        "eggs",
-        "oil"
+        "First ingr",
+        "Second ingr"
       ],
       "instructions": [
-        "fry eggs"
-      ]
+        "First instruction"
+      ],
+      "prepTimeMinutes": 40,
+      "cookTimeMinutes": 40,
+      "difficulty": "Hard",
+      "cuisine": "American",
+      "caloriesPerServing": 400,
+      "image": "https://cdn.dummyjson.com/recipe-images/31.webp",
+      "id": "nIksryp"
     },
     {
-      "name": "Dish2",
-      "image": "https://s00.yaplakal.com/pics/pics_original/3/5/9/16147953.jpg ",
-      "prepTimeMinutes": "20",
-      "cookTimeMinutes": "10",
-      "cuisine": "asian",
-      "difficulty": "hard",
-      "caloriesPerServing": "200",
-      "ingredients": "",
-      "instructions": "",
-      "id": "akbRegQ"
-    },
-    {
-      "name": "Dish1",
+      "name": "Chiken",
       "ingredients": [
-        "tomato"
+        "ingr 1",
+        "ingr 2"
       ],
       "instructions": [
-        "fry"
+        "ldldll dlldldldddddddddd dldddddddddd dlddddddddddddddd dldldlllllllllllllllllllllllllllllllllllllldldldl lldld",
+        "inst 2"
       ],
-      "prepTimeMinutes": "20",
-      "cookTimeMinutes": "20",
-      "difficulty": "easy",
-      "cuisine": "thai",
-      "caloriesPerServing": "300",
-      "image": "https://s00.yaplakal.com/pics/pics_original/3/5/9/16147953.jpg",
-      "id": "BS7z_zr"
-    },
-    {
-      "name": "Dish1",
-      "ingredients": [
-        "dd"
-      ],
-      "instructions": [
-        "dd"
-      ],
-      "prepTimeMinutes": "20",
-      "cookTimeMinutes": "20",
-      "difficulty": "easy",
-      "cuisine": "greek",
-      "caloriesPerServing": "300",
-      "image": "https://s00.yaplakal.com/pics/pics_original/3/5/9/16147953.jpg",
-      "id": "P2wvRCB"
+      "prepTimeMinutes": 30,
+      "cookTimeMinutes": 60,
+      "difficulty": "Easy",
+      "cuisine": "American",
+      "caloriesPerServing": 360,
+      "image": "https://scdn.chibbis.ru/live/banners/e317e7a0a49ded2b2f0120c963272174.png",
+      "id": "oe_jHkr"
     }
   ],
   "users": []

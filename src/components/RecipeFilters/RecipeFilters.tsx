@@ -5,7 +5,6 @@ import { useStores } from "@/root-store-context";
 import { useForm } from "react-hook-form";
 import { observer } from "mobx-react-lite";
 
-import { memo } from "react";
 import { IFilters } from "@/utils/types";
 import styles from "./RecipesFilters.module.scss";
 
@@ -13,10 +12,14 @@ const initialState: IFilters = {
   cooktime: "",
   cuisine: "not_selected",
   difficulty: "not_selected",
-  calories: "not_selected",
+  caloriesPerServing: "not_selected",
 };
 
-const RecipeFilters = observer(() => {
+export interface IProps {
+  cuisines: string[];
+}
+
+const RecipeFilters = observer(({ cuisines }: IProps) => {
   const [values, setValue] = useState<IFilters>(initialState);
 
   const {
@@ -27,10 +30,8 @@ const RecipeFilters = observer(() => {
   } = useForm();
 
   const {
-    recipeStore: { recipes, changeRecipes, getFilterRecipes },
+    recipeStore: { changeRecipes, getFilterRecipes },
   } = useStores();
-
-  const cuisines = [...new Set(recipes.map((elem) => elem.cuisine))];
 
   function handleChangeValue({
     target: { value, name },
@@ -90,6 +91,7 @@ const RecipeFilters = observer(() => {
                 <option
                   key={`cuisine_${cuisines.indexOf(elem)}`}
                   value={elem.toLowerCase()}
+                  className={elem}
                 >
                   {elem}
                 </option>
@@ -107,7 +109,7 @@ const RecipeFilters = observer(() => {
           </select>
 
           <select
-            {...register("calories")}
+            {...register("caloriesPerServing")}
             defaultValue={"not_selected"}
             onChange={handleChangeValue}
           >

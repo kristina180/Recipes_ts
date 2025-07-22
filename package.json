@@ -2,34 +2,49 @@
   "name": "recipes_ts",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "json": "json-server --watch db.json --port 3001",
     "prod": "concurrently \"npm run start\" \"npm run json\"",
-    "dev": "concurrently \"npx next dev\" \"npm run json\""
+    "dev": "concurrently \"npx next dev\" \"npm run json\"",
+    "test": "jest"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.27.2",
     "@types/axios": "^0.9.36",
     "axios": "^1.9.0",
+    "babel-jest": "^30.0.0",
     "lucide-react": "^0.510.0",
     "mobx-persist-store": "^1.1.8",
     "mobx-react-lite": "^4.1.0",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hook-form": "^7.57.0"
+    "react-hook-form": "^7.57.0",
+    "ts-jest": "^29.4.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/enzyme": "^3.10.19",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/validator": "^13.15.1",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "express": "^4.20.0",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0",
     "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0",
     "sass": "^1.89.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5",
     "validator": "^13.15.15"
   }

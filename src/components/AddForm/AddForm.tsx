@@ -24,7 +24,7 @@ const initialState: IInitialStateAddForm = {
   cookTimeMinutes: "",
   cuisine: "not_selected",
   difficulty: "not_selected",
-  calories: "",
+  caloriesPerServing: "",
   ingredients: "",
   instructions: "",
 };
@@ -36,7 +36,7 @@ const initialStateForm: IFormValuesAddForm = {
   cookTimeMinutes: "",
   cuisine: "not_selected",
   difficulty: "not_selected",
-  calories: "",
+  caloriesPerServing: "",
   ingredients: [],
   instructions: [],
 };
@@ -229,15 +229,18 @@ const AddForm = observer(() => {
           <div className={styles.error}>Level is required</div>
         )}
 
-        <label htmlFor="calories">Calorie content</label>
+        <label htmlFor="caloriesPerServing">Calorie content</label>
         <input
-          id="calories"
-          {...register("calories", { required: true, pattern: /^\d+$/ })}
-          value={values.calories}
+          id="caloriesPerServing"
+          {...register("caloriesPerServing", {
+            required: true,
+            pattern: /^\d+$/,
+          })}
+          value={values.caloriesPerServing}
           onChange={handleChangeValue}
         ></input>
-        {errors.calories &&
-          (errors.calories.type == "required" ? (
+        {errors.caloriesPerServing &&
+          (errors.caloriesPerServing.type == "required" ? (
             <div className={styles.error}>Calorie content is required</div>
           ) : (
             <div className={styles.error}>Numeric value only</div>

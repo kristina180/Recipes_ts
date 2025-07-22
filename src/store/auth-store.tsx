@@ -1,9 +1,9 @@
 import { makeAutoObservable } from "mobx";
-import { USER_URL } from "@/utils/constants";
-import { it } from "node:test";
+
+import AuthStoreActions from "./store-actions";
 
 interface IUser {
-  id: string;
+  id: number;
   name: string;
   email: string;
   password: string;
@@ -18,6 +18,8 @@ interface IValues {
   avatar?: string;
 }
 
+export const USER_URL = "https://api.escuelajs.co/api/v1/";
+
 export class AuthStore {
   formType: "signup" | "login" = "signup";
   user: IUser | undefined = undefined;
@@ -31,9 +33,10 @@ export class AuthStore {
 
   getAllUsers = async () => {
     try {
-      const checkEmail = await fetch(`${USER_URL}users/`);
-      const data_checkEmail = await checkEmail.json();
-      this.users = data_checkEmail;
+      // const checkEmail = await fetch(`${USER_URL}users/`);
+      // const data_checkEmail = await checkEmail.json();
+      const rezult = await AuthStoreActions.getUsersAction();
+      this.users = rezult;
     } catch (error: any) {
       console.log(error.message);
     }
@@ -42,17 +45,9 @@ export class AuthStore {
   signup = async (values: IValues) => {
     try {
       if (!this.users.find((elem: IUser) => elem.email == values.email)) {
-        const response = await fetch(`${USER_URL}users/`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
-
-        const data = await response.json();
-
-        this.login({ email: data.email, password: data.password });
+        const rezult = await AuthStoreActions.signupAction(values);
+        await this.getAllUsers();
+        this.login({ email: rezult.email, password: rezult.password });
       } else {
         alert("The email is already registered");
       }
@@ -63,29 +58,21 @@ export class AuthStore {
 
   login = async (values: IValues) => {
     try {
-      const response = await fetch(`${USER_URL}auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-
-      const data = await response.json();
-      if ("access_token" in data) {
-        localStorage.setItem("access_token", data.access_token);
-        document.cookie = `refresh_token=${data.refresh_token}; max-age=720`;
-        this.checkAuth();
-      }
-      if (data.statusCode && data.statusCode == 401) {
-        if (this.users.find((item) => item.email == values.email)) {
-          alert("Invalid password");
+      if (this.users.find((item) => item.email == values.email)) {
+        const rezult = await AuthStoreActions.loginAction(values);
+        console.log(rezult);
+        if ("access_token" in rezult) {
+          localStorage.setItem("access_token", rezult.access_token);
+          document.cookie = `refresh_token=${rezult.refresh_token}; max-age=720`;
+          this.checkAuth();
         } else {
-          alert("This user is not registered");
+          alert("Invalid password");
         }
+      } else {
+        alert("This user is not registered");
       }
-    } catch (error) {
-      console.log("error 401");
+    } catch (error: any) {
+      console.log(error.message);
     }
   };
 
@@ -94,17 +81,14 @@ export class AuthStore {
       this.isLoading = true;
       const token = localStorage.getItem("access_token");
       if (token) {
-        const login = await fetch(`${USER_URL}auth/profile`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        const data = await login.json();
+        // const login = await fetch(`${USER_URL}auth/profile`, {
+        //   headers: { Authorization: `Bearer ${token}` },
+        // });
+        // const data = await login.json();
+        const data = await AuthStoreActions.checkAuthAction(token);
 
-        if (data.statusCode && data.statusCode == 401) {
-          this.isError = true;
-        } else {
-          this.user = data;
-          this.isError = false;
-        }
+        this.user = data;
+        this.isError = false;
       } else {
         this.isError = true;
       }

@@ -29,7 +29,7 @@ export interface IInitialStateAddForm {
   cookTimeMinutes: string;
   cuisine: string;
   difficulty: string;
-  calories: string;
+  caloriesPerServing: string;
   ingredients: string;
   instructions: string;
 }
@@ -41,7 +41,7 @@ export interface IFormValuesAddForm {
   cookTimeMinutes: string;
   cuisine: string;
   difficulty: string;
-  calories: string;
+  caloriesPerServing: string | number;
   ingredients: string[];
   instructions: string[];
 }
@@ -50,5 +50,5 @@ export interface IFilters {
   cooktime: string;
   cuisine: string;
   difficulty: string;
-  calories: string;
+  caloriesPerServing: string;
 }

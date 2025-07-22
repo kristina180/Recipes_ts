@@ -17,6 +17,7 @@ const HomePage = observer(() => {
     <div className={styles.content}>
       <RecipeFilters cuisines={cuisines} />
       <Recipes />
+      <></>
     </div>
   );
 });

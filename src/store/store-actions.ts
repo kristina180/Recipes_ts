@@ -1,22 +1,30 @@
 export const USER_URL = "https://api.escuelajs.co/api/v1/";
 
-interface IValues {
-  name?: string;
+export interface IValuesSignup {
+  name: string;
   email: string;
   password: string;
-  avatar?: string;
+  avatar: string;
+}
+
+export interface IValuesLogin {
+  email: string;
+  password: string;
 }
 
 class AuthStoreActions {
   public async getUsersAction() {
     const response = await fetch(`${USER_URL}users/`);
     if (!response.ok) {
-      throw new Error(`Problems with getting users`);
+      const text = await response.text();
+      throw new Error(
+        `Failed to get users (status ${response.status}): ${text}`
+      );
     }
     const data = await response.json();
     return data;
   }
-  public async signupAction(values: IValues) {
+  public async signupAction(values: IValuesSignup) {
     const response = await fetch(`${USER_URL}users/`, {
       method: "POST",
       headers: {
@@ -26,14 +34,15 @@ class AuthStoreActions {
     });
 
     if (!response.ok) {
-      throw new Error(`Problems with sign up user`);
+      const text = await response.text();
+      throw new Error(`Signup failed (status ${response.status}): ${text}`);
     }
 
     const data = await response.json();
     return data;
   }
 
-  public async loginAction(values: IValues) {
+  public async loginAction(values: IValuesLogin) {
     const response = await fetch(`${USER_URL}auth/login`, {
       method: "POST",
       headers: {
@@ -42,8 +51,13 @@ class AuthStoreActions {
       body: JSON.stringify(values),
     });
 
-    if (!response.ok && response.status != 401) {
-      throw new Error(`Problems with login user`);
+    if (response.status === 401) {
+      throw new Error("Invalid email or password");
+    }
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Login failed (status ${response.status}): ${text}`);
     }
 
     const data = await response.json();
@@ -56,8 +70,13 @@ class AuthStoreActions {
       headers: { Authorization: `Bearer ${token}` },
     });
 
-    if (!response.ok && response.status != 401) {
-      throw new Error(`Problems with checking auth user`);
+    if (response.status === 401) {
+      throw new Error("Unauthorized");
+    }
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Check auth failed (status ${response.status}): ${text}`);
     }
 
     const data = await response.json();

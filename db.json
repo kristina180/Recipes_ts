@@ -25,17 +25,12 @@
       "difficulty": "Easy",
       "cuisine": "Italian",
       "caloriesPerServing": 300,
-      "tags": [
-        "Pizza",
-        "Italian"
-      ],
+      "tags": ["Pizza", "Italian"],
       "userId": 166,
       "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
       "rating": 4.6,
       "reviewCount": 98,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "2",
@@ -65,18 +60,12 @@
       "difficulty": "Medium",
       "cuisine": "Asian",
       "caloriesPerServing": 250,
-      "tags": [
-        "Vegetarian",
-        "Stir-fry",
-        "Asian"
-      ],
+      "tags": ["Vegetarian", "Stir-fry", "Asian"],
       "userId": 143,
       "image": "https://cdn.dummyjson.com/recipe-images/2.webp",
       "rating": 4.7,
       "reviewCount": 26,
-      "mealType": [
-        "Lunch"
-      ]
+      "mealType": ["Lunch"]
     },
     {
       "id": "3",
@@ -108,19 +97,12 @@
       "difficulty": "Easy",
       "cuisine": "American",
       "caloriesPerServing": 150,
-      "tags": [
-        "Cookies",
-        "Dessert",
-        "Baking"
-      ],
+      "tags": ["Cookies", "Dessert", "Baking"],
       "userId": 34,
       "image": "https://cdn.dummyjson.com/recipe-images/3.webp",
       "rating": 4.9,
       "reviewCount": 13,
-      "mealType": [
-        "Snack",
-        "Dessert"
-      ]
+      "mealType": ["Snack", "Dessert"]
     },
     {
       "id": "4",
@@ -150,18 +132,12 @@
       "difficulty": "Medium",
       "cuisine": "Italian",
       "caloriesPerServing": 500,
-      "tags": [
-        "Pasta",
-        "Chicken"
-      ],
+      "tags": ["Pasta", "Chicken"],
       "userId": 136,
       "image": "https://cdn.dummyjson.com/recipe-images/4.webp",
       "rating": 4.9,
       "reviewCount": 82,
-      "mealType": [
-        "Lunch",
-        "Dinner"
-      ]
+      "mealType": ["Lunch", "Dinner"]
     },
     {
       "id": "5",
@@ -189,17 +165,12 @@
       "difficulty": "Easy",
       "cuisine": "Mexican",
       "caloriesPerServing": 380,
-      "tags": [
-        "Chicken",
-        "Salsa"
-      ],
+      "tags": ["Chicken", "Salsa"],
       "userId": 26,
       "image": "https://cdn.dummyjson.com/recipe-images/5.webp",
       "rating": 4.9,
       "reviewCount": 63,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "6",
@@ -226,18 +197,12 @@
       "difficulty": "Easy",
       "cuisine": "Mediterranean",
       "caloriesPerServing": 280,
-      "tags": [
-        "Salad",
-        "Quinoa"
-      ],
+      "tags": ["Salad", "Quinoa"],
       "userId": 197,
       "image": "https://cdn.dummyjson.com/recipe-images/6.webp",
       "rating": 4.4,
       "reviewCount": 59,
-      "mealType": [
-        "Lunch",
-        "Side Dish"
-      ]
+      "mealType": ["Lunch", "Side Dish"]
     },
     {
       "id": "7",
@@ -265,17 +230,12 @@
       "difficulty": "Easy",
       "cuisine": "Italian",
       "caloriesPerServing": 120,
-      "tags": [
-        "Bruschetta",
-        "Italian"
-      ],
+      "tags": ["Bruschetta", "Italian"],
       "userId": 137,
       "image": "https://cdn.dummyjson.com/recipe-images/7.webp",
       "rating": 4.7,
       "reviewCount": 95,
-      "mealType": [
-        "Appetizer"
-      ]
+      "mealType": ["Appetizer"]
     },
     {
       "id": "8",
@@ -305,18 +265,12 @@
       "difficulty": "Medium",
       "cuisine": "Asian",
       "caloriesPerServing": 380,
-      "tags": [
-        "Beef",
-        "Stir-fry",
-        "Asian"
-      ],
+      "tags": ["Beef", "Stir-fry", "Asian"],
       "userId": 18,
       "image": "https://cdn.dummyjson.com/recipe-images/8.webp",
       "rating": 4.7,
       "reviewCount": 58,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "9",
@@ -342,17 +296,12 @@
       "difficulty": "Easy",
       "cuisine": "Italian",
       "caloriesPerServing": 200,
-      "tags": [
-        "Salad",
-        "Caprese"
-      ],
+      "tags": ["Salad", "Caprese"],
       "userId": 128,
       "image": "https://cdn.dummyjson.com/recipe-images/9.webp",
       "rating": 4.6,
       "reviewCount": 82,
-      "mealType": [
-        "Lunch"
-      ]
+      "mealType": ["Lunch"]
     },
     {
       "id": "10",
@@ -382,17 +331,12 @@
       "difficulty": "Medium",
       "cuisine": "Italian",
       "caloriesPerServing": 400,
-      "tags": [
-        "Pasta",
-        "Shrimp"
-      ],
+      "tags": ["Pasta", "Shrimp"],
       "userId": 114,
       "image": "https://cdn.dummyjson.com/recipe-images/10.webp",
       "rating": 4.3,
       "reviewCount": 5,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "11",
@@ -437,10 +381,7 @@
       "image": "https://cdn.dummyjson.com/recipe-images/11.webp",
       "rating": 5,
       "reviewCount": 32,
-      "mealType": [
-        "Lunch",
-        "Dinner"
-      ]
+      "mealType": ["Lunch", "Dinner"]
     },
     {
       "id": "12",
@@ -484,10 +425,7 @@
       "image": "https://cdn.dummyjson.com/recipe-images/12.webp",
       "rating": 4.8,
       "reviewCount": 68,
-      "mealType": [
-        "Lunch",
-        "Dinner"
-      ]
+      "mealType": ["Lunch", "Dinner"]
     },
     {
       "id": "13",
@@ -520,21 +458,12 @@
       "difficulty": "Medium",
       "cuisine": "Pakistani",
       "caloriesPerServing": 380,
-      "tags": [
-        "Keema",
-        "Potatoes",
-        "Main course",
-        "Pakistani",
-        "Asian"
-      ],
+      "tags": ["Keema", "Potatoes", "Main course", "Pakistani", "Asian"],
       "userId": 152,
       "image": "https://cdn.dummyjson.com/recipe-images/13.webp",
       "rating": 4.6,
       "reviewCount": 53,
-      "mealType": [
-        "Lunch",
-        "Dinner"
-      ]
+      "mealType": ["Lunch", "Dinner"]
     },
     {
       "id": "14",
@@ -567,22 +496,12 @@
       "difficulty": "Medium",
       "cuisine": "Pakistani",
       "caloriesPerServing": 320,
-      "tags": [
-        "Kebabs",
-        "Beef",
-        "Indian",
-        "Pakistani",
-        "Asian"
-      ],
+      "tags": ["Kebabs", "Beef", "Indian", "Pakistani", "Asian"],
       "userId": 152,
       "image": "https://cdn.dummyjson.com/recipe-images/14.webp",
       "rating": 4.7,
       "reviewCount": 98,
-      "mealType": [
-        "Lunch",
-        "Dinner",
-        "Snacks"
-      ]
+      "mealType": ["Lunch", "Dinner", "Snacks"]
     },
     {
       "id": "15",
@@ -611,23 +530,12 @@
       "difficulty": "Medium",
       "cuisine": "Pakistani",
       "caloriesPerServing": 280,
-      "tags": [
-        "Saag",
-        "Roti",
-        "Main course",
-        "Indian",
-        "Pakistani",
-        "Asian"
-      ],
+      "tags": ["Saag", "Roti", "Main course", "Indian", "Pakistani", "Asian"],
       "userId": 43,
       "image": "https://cdn.dummyjson.com/recipe-images/15.webp",
       "rating": 4.3,
       "reviewCount": 86,
-      "mealType": [
-        "Breakfast",
-        "Lunch",
-        "Dinner"
-      ]
+      "mealType": ["Breakfast", "Lunch", "Dinner"]
     },
     {
       "id": "16",
@@ -659,19 +567,12 @@
       "difficulty": "Medium",
       "cuisine": "Japanese",
       "caloriesPerServing": 480,
-      "tags": [
-        "Ramen",
-        "Japanese",
-        "Soup",
-        "Asian"
-      ],
+      "tags": ["Ramen", "Japanese", "Soup", "Asian"],
       "userId": 85,
       "image": "https://cdn.dummyjson.com/recipe-images/16.webp",
       "rating": 4.9,
       "reviewCount": 38,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "17",
@@ -704,18 +605,12 @@
       "difficulty": "Easy",
       "cuisine": "Moroccan",
       "caloriesPerServing": 320,
-      "tags": [
-        "Tagine",
-        "Chickpea",
-        "Moroccan"
-      ],
+      "tags": ["Tagine", "Chickpea", "Moroccan"],
       "userId": 207,
       "image": "https://cdn.dummyjson.com/recipe-images/17.webp",
       "rating": 4.5,
       "reviewCount": 50,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "18",
@@ -746,18 +641,12 @@
       "difficulty": "Medium",
       "cuisine": "Korean",
       "caloriesPerServing": 550,
-      "tags": [
-        "Bibimbap",
-        "Korean",
-        "Rice"
-      ],
+      "tags": ["Bibimbap", "Korean", "Rice"],
       "userId": 121,
       "image": "https://cdn.dummyjson.com/recipe-images/18.webp",
       "rating": 4.9,
       "reviewCount": 56,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "19",
@@ -795,17 +684,12 @@
       "difficulty": "Medium",
       "cuisine": "Greek",
       "caloriesPerServing": 420,
-      "tags": [
-        "Moussaka",
-        "Greek"
-      ],
+      "tags": ["Moussaka", "Greek"],
       "userId": 173,
       "image": "https://cdn.dummyjson.com/recipe-images/19.webp",
       "rating": 4.3,
       "reviewCount": 26,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "20",
@@ -836,20 +720,12 @@
       "difficulty": "Medium",
       "cuisine": "Pakistani",
       "caloriesPerServing": 480,
-      "tags": [
-        "Butter chicken",
-        "Curry",
-        "Indian",
-        "Pakistani",
-        "Asian"
-      ],
+      "tags": ["Butter chicken", "Curry", "Indian", "Pakistani", "Asian"],
       "userId": 138,
       "image": "https://cdn.dummyjson.com/recipe-images/20.webp",
       "rating": 4.5,
       "reviewCount": 44,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "21",
@@ -878,17 +754,12 @@
       "difficulty": "Medium",
       "cuisine": "Thai",
       "caloriesPerServing": 480,
-      "tags": [
-        "Curry",
-        "Thai"
-      ],
+      "tags": ["Curry", "Thai"],
       "userId": 153,
       "image": "https://cdn.dummyjson.com/recipe-images/21.webp",
       "rating": 4.2,
       "reviewCount": 18,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "22",
@@ -914,20 +785,12 @@
       "difficulty": "Easy",
       "cuisine": "Indian",
       "caloriesPerServing": 180,
-      "tags": [
-        "Lassi",
-        "Mango",
-        "Indian",
-        "Pakistani",
-        "Asian"
-      ],
+      "tags": ["Lassi", "Mango", "Indian", "Pakistani", "Asian"],
       "userId": 76,
       "image": "https://cdn.dummyjson.com/recipe-images/22.webp",
       "rating": 4.7,
       "reviewCount": 15,
-      "mealType": [
-        "Beverage"
-      ]
+      "mealType": ["Beverage"]
     },
     {
       "id": "23",
@@ -956,17 +819,12 @@
       "difficulty": "Medium",
       "cuisine": "Italian",
       "caloriesPerServing": 350,
-      "tags": [
-        "Tiramisu",
-        "Italian"
-      ],
+      "tags": ["Tiramisu", "Italian"],
       "userId": 130,
       "image": "https://cdn.dummyjson.com/recipe-images/23.webp",
       "rating": 4.6,
       "reviewCount": 0,
-      "mealType": [
-        "Dessert"
-      ]
+      "mealType": ["Dessert"]
     },
     {
       "id": "24",
@@ -995,18 +853,12 @@
       "difficulty": "Easy",
       "cuisine": "Turkish",
       "caloriesPerServing": 280,
-      "tags": [
-        "Kebabs",
-        "Turkish",
-        "Grilling"
-      ],
+      "tags": ["Kebabs", "Turkish", "Grilling"],
       "userId": 26,
       "image": "https://cdn.dummyjson.com/recipe-images/24.webp",
       "rating": 4.6,
       "reviewCount": 78,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "25",
@@ -1031,19 +883,12 @@
       "difficulty": "Easy",
       "cuisine": "Smoothie",
       "caloriesPerServing": 220,
-      "tags": [
-        "Smoothie",
-        "Blueberry",
-        "Banana"
-      ],
+      "tags": ["Smoothie", "Blueberry", "Banana"],
       "userId": 16,
       "image": "https://cdn.dummyjson.com/recipe-images/25.webp",
       "rating": 4.8,
       "reviewCount": 30,
-      "mealType": [
-        "Breakfast",
-        "Beverage"
-      ]
+      "mealType": ["Breakfast", "Beverage"]
     },
     {
       "id": "26",
@@ -1067,19 +912,12 @@
       "difficulty": "Easy",
       "cuisine": "Mexican",
       "caloriesPerServing": 180,
-      "tags": [
-        "Elote",
-        "Mexican",
-        "Street food"
-      ],
+      "tags": ["Elote", "Mexican", "Street food"],
       "userId": 93,
       "image": "https://cdn.dummyjson.com/recipe-images/26.webp",
       "rating": 4.6,
       "reviewCount": 2,
-      "mealType": [
-        "Snack",
-        "Side Dish"
-      ]
+      "mealType": ["Snack", "Side Dish"]
     },
     {
       "id": "27",
@@ -1109,18 +947,12 @@
       "difficulty": "Medium",
       "cuisine": "Russian",
       "caloriesPerServing": 220,
-      "tags": [
-        "Borscht",
-        "Russian",
-        "Soup"
-      ],
+      "tags": ["Borscht", "Russian", "Soup"],
       "userId": 1,
       "image": "https://cdn.dummyjson.com/recipe-images/27.webp",
       "rating": 4.3,
       "reviewCount": 39,
-      "mealType": [
-        "Dinner"
-      ]
+      "mealType": ["Dinner"]
     },
     {
       "id": "28",
@@ -1151,18 +983,12 @@
       "difficulty": "Medium",
       "cuisine": "Indian",
       "caloriesPerServing": 320,
-      "tags": [
-        "Dosa",
-        "Indian",
-        "Asian"
-      ],
+      "tags": ["Dosa", "Indian", "Asian"],
       "userId": 138,
       "image": "https://cdn.dummyjson.com/recipe-images/28.webp",
       "rating": 4.4,
       "reviewCount": 96,
-      "mealType": [
-        "Breakfast"
-      ]
+      "mealType": ["Breakfast"]
     },
     {
       "id": "29",
@@ -1190,18 +1016,12 @@
       "difficulty": "Easy",
       "cuisine": "Lebanese",
       "caloriesPerServing": 400,
-      "tags": [
-        "Falafel",
-        "Lebanese",
-        "Wrap"
-      ],
+      "tags": ["Falafel", "Lebanese", "Wrap"],
       "userId": 110,
       "image": "https://cdn.dummyjson.com/recipe-images/29.webp",
       "rating": 4.7,
       "reviewCount": 84,
-      "mealType": [
-        "Lunch"
-      ]
+      "mealType": ["Lunch"]
     },
     {
       "id": "30",
@@ -1225,28 +1045,17 @@
       "difficulty": "Easy",
       "cuisine": "Brazilian",
       "caloriesPerServing": 150,
-      "tags": [
-        "Caipirinha",
-        "Brazilian",
-        "Cocktail"
-      ],
+      "tags": ["Caipirinha", "Brazilian", "Cocktail"],
       "userId": 134,
       "image": "https://cdn.dummyjson.com/recipe-images/30.webp",
       "rating": 4.4,
       "reviewCount": 55,
-      "mealType": [
-        "Beverage"
-      ]
+      "mealType": ["Beverage"]
     },
     {
       "name": "New_dish",
-      "ingredients": [
-        "First ingr",
-        "Second ingr"
-      ],
-      "instructions": [
-        "First instruction"
-      ],
+      "ingredients": ["First ingr", "Second ingr"],
+      "instructions": ["First instruction"],
       "prepTimeMinutes": 40,
       "cookTimeMinutes": 40,
       "difficulty": "Hard",
@@ -1257,10 +1066,7 @@
     },
     {
       "name": "Chiken",
-      "ingredients": [
-        "ingr 1",
-        "ingr 2"
-      ],
+      "ingredients": ["ingr 1", "ingr 2"],
       "instructions": [
         "ldldll dlldldldddddddddd dldddddddddd dlddddddddddddddd dldldlllllllllllllllllllllllllllllllllllllldldldl lldld",
         "inst 2"

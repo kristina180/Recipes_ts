@@ -9,7 +9,7 @@
     "lint": "next lint",
     "json": "json-server --watch db.json --port 3001",
     "prod": "concurrently \"npm run start\" \"npm run json\"",
-    "dev": "concurrently \"npx next dev\" \"npm run json\"",
+    "dev": "npx next dev",
     "test": "jest"
   },
   "dependencies": {

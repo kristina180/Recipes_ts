@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { IValuesLogin, IValuesSignup } from "./store-actions";
 
 import AuthStoreActions from "./store-actions";
@@ -121,13 +121,16 @@ export class AuthStore {
 
     const token = localStorage.getItem("access_token");
     if (!token) {
-      this.setLoading(false);
-      this.user = null;
+      runInAction(() => {
+        this.setLoading(false);
+        this.user = null;
+      });
+
       return;
     }
     try {
       const useData = await AuthStoreActions.checkAuthAction(token);
-      this.user = useData;
+      runInAction(() => (this.user = useData));
     } catch (error: any) {
       if (error.message === "Unauthorized") {
         this.user = null;
@@ -135,7 +138,7 @@ export class AuthStore {
         this.setError(error.message || "Check auth failed");
       }
     } finally {
-      this.setLoading(false);
+      runInAction(() => this.setLoading(false));
     }
   };
   toggleFormType = (value: "signup" | "login") => {

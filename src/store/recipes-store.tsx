@@ -3,7 +3,8 @@ import { IFormValuesAddForm, IGetRecipe } from "@/utils/types";
 
 // import { makePersistable } from "mobx-persist-store";
 
-const RECIPE_URL = "http://localhost:3001/recipes";
+// const RECIPE_URL = "http://localhost:3001/recipes";
+const RECIPE_URL = "https://dummyjson.com/recipes";
 
 interface IFilters {
   cooktime: string;
@@ -32,9 +33,9 @@ export class RecipeStore {
       const data = await response.json();
 
       runInAction(() => {
-        this.recipes = data;
+        this.recipes = data.recipes;
         this.isLoading = false;
-        this.filterRecipes = data;
+        this.filterRecipes = data.recipes;
       });
     } catch {
       this.isLoading = false;
@@ -51,23 +52,22 @@ export class RecipeStore {
       this.isLoading = true;
 
       const data_for_post = {
-        name: toUpperFirst(values.name),
-        ingredients: values.ingredients,
-        instructions: values.instructions,
-        prepTimeMinutes: Number(values.prepTimeMinutes),
-        cookTimeMinutes: Number(values.cookTimeMinutes),
-        difficulty: toUpperFirst(values.difficulty),
-        cuisine: toUpperFirst(values.cuisine),
-        caloriesPerServing: Number(values.caloriesPerServing),
-        image: values.image,
+        ...values,
+        ["name"]: toUpperFirst(values.name),
+        ["prepTimeMinutes"]: Number(values.prepTimeMinutes),
+        ["cookTimeMinutes"]: Number(values.cookTimeMinutes),
+        ["difficulty"]: toUpperFirst(values.difficulty),
+        ["cuisine"]: toUpperFirst(values.cuisine),
+        ["caloriesPerServing"]: Number(values.caloriesPerServing),
       };
-      const response = await fetch(RECIPE_URL, {
+      await fetch(`${RECIPE_URL}/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify(data_for_post),
       });
+      console.log("New recipe added");
 
       runInAction(() => {
         this.isLoading = false;

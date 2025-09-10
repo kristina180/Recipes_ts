@@ -86,7 +86,7 @@ const SignUpForm = observer(() => {
           className={styles.input}
         ></input>
         <p onClick={() => toggleFormType("login")}>I already have an account</p>
-        <button type="submit">SIgn up</button>
+        <button type="submit">Sign up</button>
       </form>
     </div>
   );

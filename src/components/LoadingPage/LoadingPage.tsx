@@ -5,7 +5,7 @@ export default function LoadingPage() {
   return (
     <div className={styles.load}>
       <p> Loading &nbsp; </p>
-      <Loader size={36} />
+      <Loader size={28} />
     </div>
   );
 }

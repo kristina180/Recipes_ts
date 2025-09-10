@@ -40,7 +40,7 @@ const Profile = observer(() => {
           </div>
         </>
       ) : (
-        <div> Loading...</div>
+        <div className={styles.loading}> Loading...</div>
       )}
     </div>
   );

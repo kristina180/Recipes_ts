@@ -74,9 +74,12 @@ This is a modern recipe management web application where users can search for re
 | **TypeScript**     | Static typing and type safety                |
 | **SCSS** | Styling with variables and nesting
 | **Mobx**  | State management                             |
+| **React Hook Form** | Form handling and validation              |
+| **Jest** | Unit testing|
 | **Fetch**          | API requests                                 |
 | **dummyjson.com**| Mock API for products data                   |
 | **api.escuelajs.co**| Mock API for user data                   |
+
 
 
 

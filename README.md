@@ -15,20 +15,29 @@ This is a modern recipe management web application where users can search for re
 
 </p>
 
+
+
 <p align="center"> User Page
    
 <img width="1532" height="619" alt="image" src="https://github.com/user-attachments/assets/2eacdc55-5912-4c89-9069-748cf57bec92" />
 
 </p>
+
+
+
 <p align="center"> Recipe Page
 
-<img width="1021" height="871" alt="image" src="https://github.com/user-attachments/assets/2039529b-c4aa-4fc0-a006-bd1993d1e67c" />
+<img width="1021" height="871" alt="image" src="https://github.com/user-attachments/assets/2039529b-c4aa-4fc0-a006-bd1993d1e67c" /></p>
+
+
 
 <p align="center"> Favorites Page
 
 <img width="1377" height="724" alt="image" src="https://github.com/user-attachments/assets/4b92f3d9-cc27-4088-b124-12f9c8ae2d8a" />
 
 </p>
+
+
 
 <p align="center"> Recipe addition form
 
